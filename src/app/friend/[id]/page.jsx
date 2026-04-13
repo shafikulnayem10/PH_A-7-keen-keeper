@@ -5,28 +5,16 @@ import { useParams } from 'next/navigation';
 import { FaPhone, FaMessage, FaVideo, FaClock, FaBoxArchive, FaTrash } from "react-icons/fa6";
 
 import friendsData from '../../../../public/data.json'; 
-import { toast } from 'react-toastify';
+import { useFriends } from '@/hooks/useFriendsHook/useFriends';
 
 const FriendDetailsPage = () => {
   const { id } = useParams();
+  
+  const { addActivity } = useFriends();
+  
   const friend = friendsData.find((f) => f.id === parseInt(id));
 
   if (!friend) return <div className="text-center py-20">Friend not found.</div>;
-
-  
-  const handleCheckIn = (type) => {
-    const newEntry = {
-      type,
-      title: `${type} with ${friend.name}`,
-      date: new Date().toLocaleDateString('en-GB'),
-    };
-
-    const existing = JSON.parse(localStorage.getItem('keen_activities') || '[]');
-    localStorage.setItem('keen_activities', JSON.stringify([...existing, newEntry]));
-
-   
-    toast.success(`Logged ${type} with ${friend.name}!`);
-  };
 
   const getStatusColor = (status) => {
     if (status === 'overdue') return 'bg-red-500';
@@ -59,7 +47,6 @@ const FriendDetailsPage = () => {
             <p className="text-xs text-slate-400">Preferred: {friend.email}</p>
           </div>
 
-         
           <div className="space-y-2">
             <button className="btn btn-block bg-white border-slate-100 text-slate-700 normal-case hover:bg-slate-50">
               <FaClock className="mr-2" /> Snooze 2 Weeks
@@ -73,10 +60,9 @@ const FriendDetailsPage = () => {
           </div>
         </div>
 
-       
+        
         <div className="md:col-span-8 space-y-6">
           
-         
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="bg-white border border-slate-100 rounded-xl p-6 shadow-sm text-center">
               <div className="text-3xl font-bold text-slate-800">{friend.days_since_contact}</div>
@@ -92,7 +78,6 @@ const FriendDetailsPage = () => {
             </div>
           </div>
 
-         
           <div className="bg-white border border-slate-100 rounded-xl p-6 shadow-sm flex justify-between items-center">
             <div>
               <h3 className="font-bold text-slate-800">Relationship Goal</h3>
@@ -105,14 +90,15 @@ const FriendDetailsPage = () => {
           <div className="bg-white border border-slate-100 rounded-xl p-8 shadow-sm">
             <h3 className="font-bold text-slate-800 mb-6">Quick Check-In</h3>
             <div className="grid grid-cols-3 gap-4">
-              <button onClick={() => handleCheckIn('Call')} className="btn flex flex-col h-24 bg-white border-slate-100 hover:bg-slate-50 text-slate-700">
-                <FaPhone size={20} /> <span className="text-xs mt-2">Call</span>
+             
+              <button onClick={() => addActivity('Call', friend)} className="btn flex flex-col h-24 bg-white border-slate-100 hover:bg-slate-50 text-slate-700">
+                <FaPhone size={20} className="text-pink-500" /> <span className="text-xs mt-2">Call</span>
               </button>
-              <button onClick={() => handleCheckIn('Text')} className="btn flex flex-col h-24 bg-white border-slate-100 hover:bg-slate-50 text-slate-700">
-                <FaMessage size={20} /> <span className="text-xs mt-2">Text</span>
+              <button onClick={() => addActivity('Text', friend)} className="btn flex flex-col h-24 bg-white border-slate-100 hover:bg-slate-50 text-slate-700">
+                <FaMessage size={20} className="text-purple-400" /> <span className="text-xs mt-2">Text</span>
               </button>
-              <button onClick={() => handleCheckIn('Video')} className="btn flex flex-col h-24 bg-white border-slate-100 hover:bg-slate-50 text-slate-700">
-                <FaVideo size={20} /> <span className="text-xs mt-2">Video</span>
+              <button onClick={() => addActivity('Video', friend)} className="btn flex flex-col h-24 bg-white border-slate-100 hover:bg-slate-50 text-slate-700">
+                <FaVideo size={20} className="text-slate-600" /> <span className="text-xs mt-2">Video</span>
               </button>
             </div>
           </div>
