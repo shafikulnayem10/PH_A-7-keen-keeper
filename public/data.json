@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "David Kim",
+    "picture": "/Pic-1.png",
+    "email": "david.kim@example.com",
+    "days_since_contact": 62,
+    "status": "almost due",
+    "tags": ["WORK"],
+    "bio": "Lead developer at the previous startup. Great mentor.",
+    "goal": 30,
+    "next_due_date": "2026-05-10"
+  },
+  {
+    "id": 2,
+    "name": "Emma Wilson",
+    "picture": "/Pic-2.png",
+    "email": "emma.w@example.com",
+    "days_since_contact": 62,
+    "status": "overdue",
+    "tags": ["FAMILY"],
+    "bio": "Cousin from Chicago. Loves photography and travel.",
+    "goal": 14,
+    "next_due_date": "2026-04-01"
+  },
+  {
+    "id": 3,
+    "name": "Lisa Nakamura",
+    "picture": "/Pic-3.png",
+    "email": "lisa.n@example.com",
+    "days_since_contact": 62,
+    "status": "overdue",
+    "tags": ["WORK"],
+    "bio": "Project manager. Expert in agile methodologies.",
+    "goal": 30,
+    "next_due_date": "2026-04-05"
+  },
+  {
+    "id": 4,
+    "name": "James Wright",
+    "picture": "/Pic-4.png",
+    "email": "james.wright@example.com",
+    "days_since_contact": 62,
+    "status": "on-track",
+    "tags": ["HOBBY", "TRAVEL"],
+    "bio": "College roommate. We go hiking every summer.",
+    "goal": 90,
+    "next_due_date": "2026-07-20"
+  },
+  {
+    "id": 5,
+    "name": "Sophia Chen",
+    "picture": "/Pic-5.png",
+    "email": "sophia.c@example.com",
+    "days_since_contact": 15,
+    "status": "on-track",
+    "tags": ["COLLEGE"],
+    "bio": "Met in university. Study partner for computer science.",
+    "goal": 60,
+    "next_due_date": "2026-06-15"
+  },
+  {
+    "id": 6,
+    "name": "Michael Brown",
+    "picture": "/Pic-6.png",
+    "email": "m.brown@example.com",
+    "days_since_contact": 45,
+    "status": "almost due",
+    "tags": ["NEIGHBOR"],
+    "bio": "Lives next door. Very helpful and loves gardening.",
+    "goal": 30,
+    "next_due_date": "2026-04-25"
+  },
+  {
+    "id": 7,
+    "name": "Sarah Jenkins",
+    "picture": "/Pic-7.png",
+    "email": "s.jenkins@example.com",
+    "days_since_contact": 80,
+    "status": "overdue",
+    "tags": ["WORK", "TECH"],
+    "bio": "UI designer with a keen eye for minimalist aesthetics.",
+    "goal": 45,
+    "next_due_date": "2026-03-15"
+  },
+  {
+    "id": 8,
+    "name": "Ryan Garcia",
+    "picture": "/Pic-8.png",
+    "email": "ryan.g@example.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["GYM"],
+    "bio": "Workout partner. Keeps me motivated at the gym.",
+    "goal": 7,
+    "next_due_date": "2026-04-20"
+  }
+]
