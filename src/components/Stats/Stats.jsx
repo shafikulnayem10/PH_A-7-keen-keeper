@@ -45,7 +45,7 @@ const Stats = () => {
 
           
           <div className="bg-white border border-gray-100 shadow-sm rounded-xl py-10 px-4">
-            <div className="text-4xl font-bold text-amber-600 mb-1">{needAttentionCount}</div>
+            <div className="text-4xl font-bold text-slate-800 mb-1">{needAttentionCount}</div>
             <div className="text-slate-500 text-sm font-medium">Need Attention</div>
           </div>
 
