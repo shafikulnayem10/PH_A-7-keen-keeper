@@ -21,7 +21,11 @@ export const FriendProvider = ({ children }) => {
       type,
       friendName: friend.name,
       title: `${type} with ${friend.name}`,
-      date: new Date().toLocaleDateString('en-GB'),
+     date: new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+       day: 'numeric'
+     }),
     };
 
     const updatedActivities = [newEntry, ...activities];
